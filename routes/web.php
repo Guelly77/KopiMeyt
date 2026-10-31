@@ -11,6 +11,7 @@ use Illuminate\Support\Facades\Route;
 use App\Livewire\Cart\Index as CartPage;
 use App\Livewire\Home\Index as HomePage;
 use App\Livewire\Checkout\Index as CheckoutPage;
+use App\Livewire\Orders\Index as OrdersPage;
 
 
 // Authentication
@@ -45,6 +46,9 @@ Route::middleware(['auth', 'admin'])
 
         Route::get('/products/{product}/edit', ProductEdit::class)
             ->name('products.edit');
+
+        Route::get('/orders', OrdersPage::class)
+            ->name('orders.index');
     });
 
 // Temporary home page until we build the shop landing page
